@@ -1,0 +1,108 @@
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <link rel="stylesheet" type="text/css" href="Css/fonts/font-awesome-4.2.0/css/font-awesome.min.css">
+
+    <style>
+    .parent2 {
+        top:15px;
+        left:15px;
+        position:fixed;
+        display:block;
+        width:50px;
+        height:50px;
+        background-color:transparent;
+        border-radius:50%;
+        z-index:20;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+    .mask2 {
+        top:15px;
+        left:15px;
+        width:50px;
+        height:50px;
+        background:darkSlateGray;
+        border-radius:50%;
+        position:absolute;
+        z-index:21;
+        color:white;
+        text-align:center;
+        line-height:120px;
+        cursor:pointer;
+        position:fixed;
+    }
+
+</style>
+{% endblock %}
+
+
+    <script type="text/javascript">
+        function imprimer_page(){
+            window.print();
+        }
+    </script>
+<div class="parent2">
+      <a href="cartelist.html"><div class="mask2"><i class="fa fa-home fa-3x"></i></div></a>
+</div>
+    <div class="row" style="margin-top: 100px;">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>{{ nomEtu }}</strong>
+                        <br>
+                        {{ filiere }}
+                        <br>
+                        {{ refEtu }}
+                        <br>
+
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                    <p>
+                        <em>Date : {{ date }}</em>
+                    </p>
+                    <p>
+                        <em>N°#{{ nomRecu }}</em>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <h1>Reçu</h1>
+                </div>
+                </span>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th class="text-center">Prix</th>
+                        <th class="text-center">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="col-md-9"><em>Montant ajouté</em></h4></td>
+                        <td class="col-md-1 text-center">{{ Montant }}</td>
+                        <td class="col-md-1 text-center">{{ Montant }}</td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+
+                    </tr>
+                    <tr>
+                        <td>   </td>
+
+                        <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                        <td class="text-center text-danger"><h4><strong>{{ Montant }}</strong></h4></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+

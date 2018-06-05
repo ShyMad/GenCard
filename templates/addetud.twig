@@ -1,0 +1,45 @@
+{% extends "main.twig" %}
+{% block title %}Ajout d'un Etudiant{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/etudiants.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Ajouter un Etudiant:</h2>
+                <span class="alert-info">{{ msg|raw }}</span><br>
+                <form action="addetud.php" method="post">
+                    <label class="moderns">Reference de l'etudiant:</label><input type="text" required name="ref" class="line"/><br>
+                    <label class="moderns">Nom de l'etudiant:</label><input type="text" required name="nom" class="line"/><br>
+                    <label class="moderns">Prenom de l'etudiant:</label><input type="text" required name="prenom" class="line"/><br>
+                    <label class="moderns">Date de naissance:</label> <input type="date" required class="line" name="dateNaiss"/><br>
+                    <label class="moderns">GSM:</label> <input type="tel" placeholder="06 xx xx xx xx" class="line" name="gsm"/><br>
+                    <label class="moderns">Etablissement:</label>
+                    <select class="line" required name="etab">
+                        <option value="FSI">Facult&eacute; des science de l'ing&eacute;nieur</option>
+                        <option value="ECM">Ecole de Commerce et de Management</option>
+                        <option value="ESMAB">Ecole sup&eacute;rieur des Metiers de L'architecture d'interieur et du b&acirc;timent</option>
+                        <option value="CPE">Classe preparatoires aux Grandes Ecoles</option>
+                    </select><br>
+                    <label class="moderns">Filiere:</label> <input type="text" required class="line" name="filiere"/>
+                    <label class="moderns">Ann&eacute;e:</label> <input type="number" required class="line" name="annee"/><br><br>
+                    <input type="submit" name="ajouter" value="ajouter" class="depth-sub"/>&emsp;<input type="reset" value="reset" class="depth-sub"/>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

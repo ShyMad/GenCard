@@ -1,0 +1,54 @@
+{% extends "main.twig" %}
+{% block title %}Liste des cartes{% endblock %}
+
+{% block css %}
+    <script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Css/cartes.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <link rel="stylesheet" type="text/css" href="Css/etudList.css" />
+    <link rel="stylesheet" type="text/css" href="Css/tri.css" />
+    <script language="JavaScript" type="text/javascript" src="js/tri.js"></script>
+   <script language="JavaScript" type="text/javascript" src="js/search.js"></script>
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Liste des cartes</h2>
+                <span class="alert-info">{{ msg|raw }}</span><br>
+                <div class="search">
+                    <i class="fa fa-search"> </i> <input type="text" placeholder="ref Carte ou ref Etud" class="text line me" name="carte" id="recherche">
+                </div>
+                <div class="scroll">
+                    <table class="paginated">
+                        <thead>
+                            <th>Reference Carte</th>
+                            <th>Reference Etudiant</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Solde</th>
+                            <th>Statut</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody id="affichs">
+
+                        {{ frm|raw }}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

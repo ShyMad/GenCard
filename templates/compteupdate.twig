@@ -1,0 +1,23 @@
+{% extends "main.twig" %}
+{% block title %}Updated !{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="Css/compte.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <script type="application/javascript" src="js/forms.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <h2 class="">Message :</h2>
+            <span class="alert-info">{{ app.request.query.get("nom") }}</span><br>
+
+
+        </div>
+
+
+
+
+
+    </div>
+{% endblock %}

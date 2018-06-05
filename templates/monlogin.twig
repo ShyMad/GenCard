@@ -1,0 +1,28 @@
+{% extends "main.twig" %}
+{% block title %}Mon Login{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="Css/compte.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <script type="application/javascript" src="js/forms.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form">
+                <h2 class="">Vos Informations :</h2>
+                <span class="alert-info">{{ cp }}</span><br>
+                <form action="monlogin.php" method="post">
+                  <label class="moderns">Votre User name:</label><input id="nom"  type="text" value="{{ row.userName }}" class="line" name="username"/><br>
+                   <label class="moderns">Votre Password:</label><input id="prenom" type="text" value="{{ row.Password }}" class="line"  name="pwd"/><br>
+                    <input type="submit" name="modifier" value="modifier" class="depth-sub">&emsp;<input type="submit" name="annuler" value="Annuler" class="depth-sub">
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+{% endblock %}

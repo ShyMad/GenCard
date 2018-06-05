@@ -1,0 +1,33 @@
+{% extends "main.twig" %}
+{% block title %}Mon Compte{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="Css/compte.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <script type="application/javascript" src="js/forms.js"></script>
+{% endblock %}
+
+{% block content %}
+   <div class="row">
+
+       <div class="col-md-10 col-md-offset-1">
+           <div class="form">
+               <h2>Vos Informations :</h2>
+               <span class="alert-info">{{ cp }}</span><br>
+               <form action="moncompte.php" method="post">
+                   <label class="moderns">Votre Nom:</label><input id="nom"  type="text" value="{{ ro.Nom }}" class="line" name="nom"/><br>
+                   <label class="moderns">Votre Prenom:</label><input id="prenom" value="{{ ro.Prenom }}" class="line" type="text" name="prenom"/><br>
+                   <label class="moderns">Votre CIN:</label><input id="cin" value="{{ ro.CIN }}"  class="line" type="text" name="cin"/><br>
+                   <label class="moderns">Votre Description :</label><textarea type="text" rows="4" cols="100" class="line" name="description">{{ ro.description }}</textarea><br>
+                   <input type="submit" name="modifier" value="modifier" class="depth-sub ">&emsp;<input type="submit" name="annuler" value="Annuler" class="depth-sub ">
+               </form>
+           </div>
+       </div>
+
+
+
+
+
+   </div>
+
+{% endblock %}

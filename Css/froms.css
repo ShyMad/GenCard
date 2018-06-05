@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.line {
+    display: inline-block;
+    margin-bottom:20px;
+    margin-left:30px;
+    border: none;
+    color: #333;
+    background: transparent;
+    border-bottom: 1px dotted black;
+    padding: 5px 2px 0 2px;
+}
+.line textarea{
+    rows : 4 ;
+    cols : 50;
+}
+
+.line:focus {
+    outline: none;
+    border-color: #51CBEE;
+}
+.depth-sub {
+
+    width:100px;
+    margin-bottom:10px;
+    border: 1px solid silver;
+    background: linear-gradient(#eee, #fff);
+    transition: all 0.3s ease-out;
+    padding: 5px;
+    color: #555;
+}
+.lbl{
+    margin-right:20px;
+}
+
+#container .Con {
+    width: 70%;
+    max-width: 700px;
+    padding: 0 30px 40px 0px;
+    margin: 0px auto 0px  350px;
+    float:left;
+    left:10px;
+}
+#container .insc {
+    width: 90%;
+    max-width: 900px;
+    padding: 0 20px 40px 0px;
+    margin: 0px auto 0px  250px;
+    float:left;
+    left:10px;
+}
+.Con h3 {
+    background: #00BFAA;
+    color: #fff;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.7);
+    border-radius: 20px 20px 0 0;
+    padding: 13px 20px;
+    font-size: 22px;
+}
+.insc h3 {
+    background: #00DFAA;
+    color: #fff;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.7);
+    border-radius: 20px 20px 0 0;
+    padding: 13px 20px;
+    font-size: 22px;
+}
+
+.simple-input {
+    display: inline-block;
+    padding: 5px;
+    border: 4px solid #00DFAA;
+    border-radius: 5px;
+    color: #333;
+    transition: all 0.3s ease-out;
+}
+.simple-input-danger{
+    display: inline-block;
+    padding: 5px;
+    border: 4px solid #761c19;
+    border-radius: 5px;
+    color: #333;
+    transition: all 0.3s ease-out;
+}
+
+.simple-input-danger:hover { border-radius: 8px; }
+.simple-input-danger:focus {
+    outline: none;
+    border-radius: 8px;
+    border-color: #db9dbe;
+}
+
+.simple-input:hover { border-radius: 8px; }
+.simple-input:focus {
+    outline: none;
+    border-radius: 8px;
+    border-color: #C7FE0A;
+}
+.sub  {
+    display: inline-block;
+    margin-left: 34%;
+    margin-top: 20px;
+    margin-bottom:10px;
+    width:120px;
+    padding: 8px 15px;
+    background: #00DFAA;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2);
+
+    /* Font styles */
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255,255,255,0.7);
+}
+.sub:hover  { background: #C7FE0A; }
+.moderns {
+    display: inline-block;
+    margin: 10px;
+    padding: 8px 15px;
+    background: #a6e1ec;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+    box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2);
+
+    /* Font styles */
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255,255,255,0.7);
+}
+
+.form {
+    width: 100%;
+    padding: 0 20px 40px 0px;
+
+    float:left;
+    left:10px;
+}
+.form h2 {
+    background: #a6e1ec;
+    color: #fff;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.7);
+    border-radius: 20px 20px 0 0;
+    padding: 13px 20px;
+    font-size: 22px;
+}
+.in_put {
+    display: inline-block;
+    padding: 5px;
+    border: 4px solid #a6e1ec;
+    border-radius: 5px;
+    color: #333;
+    transition: all 0.3s ease-out;
+}
+
+.in_put:hover { border-radius: 8px; }
+.in_put:focus {
+    outline: none;
+    border-radius: 8px;
+    border-color: #e4b9b9;
+}
+

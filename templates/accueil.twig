@@ -1,0 +1,110 @@
+{% extends "main.twig" %}
+{% block title %} Page d'Accueil{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="Css/accueil.css" />
+    <link rel="stylesheet" type="text/css" href="Css/bootsrap.css" />
+	<script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Css/cartes.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <script language="JavaScript" type="text/javascript" src="js/lirecode.js"></script>
+{% endblock %}
+
+{% block content %}
+    <!--Head OF dashbord-->
+	 {% if  user.role == 3 %}
+    <div class="col-md-12 card-update-gd">
+        <div class="jumbotron">
+            <div class="center-block text-center">
+                <h1>GenCard</h1>
+                <h4 class="jum-desc"> Application de gestion de cartes numeriques</h4>
+            </div>
+        </div>
+    </div>
+
+    <!--inner block start here-->
+   
+    <div class="inner-block">
+
+        <!--card updates updates-->
+        <div class="card-updates">
+
+
+            <div class="col-md-4 card-update-gd">
+                <div class="card-update-block clr-block-1">
+                    <div class="col-md-8 card-update-left">
+                        <h3>{{ pers|raw }}</h3>
+                        <h4>Personnels enregist&eacute;s</h4>
+
+                    </div>
+                    <div class="col-md-4 card-update-right">
+                        <i class="fa fa-file-text-o"> </i>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-update-gd">
+                <div class="card-update-block clr-block-2">
+                    <div class="col-md-8 card-update-left">
+                        <h3>{{ carte|raw }}</h3>
+                        <h4>Nombre de Cartes</h4>
+
+                    </div>
+                    <div class="col-md-4 card-update-right">
+                        <i class="fa fa-credit-card"> </i>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-4 card-update-gd">
+                <div class="card-update-block clr-block-3">
+                    <div class="col-md-8 card-update-left">
+                        <h3>{{ etd|raw }}</h3>
+                        <h4>Nombres D'etudiants</h4>
+
+                    </div>
+                    <div class="col-md-4 card-update-right">
+                        <i class="fa fa-users"> </i>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    {% endif %}
+	{% if user.role == 2%}
+	 <div class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <ul class="thumbnails">
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail img-circle">
+                                 <img height="256px" width="256px" src="Css/images/list_card.png" alt="">
+                            </div>
+                            <div class="caption">
+                                <span class="fa-border center-block text-center bg-danger">{{ msg|raw }}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail">
+                                <label class="moderns">Entrer le code :</label>
+                                    <input type="text" class="simple-input" id="ref" placeholder="ex : C01">
+                                <button id="recherche" class="simple-input">chercher</button>
+                            </div>
+                            <div class="caption" id="affichs">
+                                </form>
+                                <span class="fa-border center-block text-center">Zone Carte Informations!</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+	{% endif %}
+	
+{% endblock %}

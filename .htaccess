@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteRule ^$ connexion.html
+RewriteRule ^([a-z]+).html$ monControleur.php?action=$1
+RewriteRule ^([a-z]+).php$ monControleur.php?action=$1
+

@@ -1,0 +1,47 @@
+{% extends "main.twig" %}
+{% block title %}Modification d'un Etudiant{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/etudiants.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-9 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Modifier un Etudiant:</h2>
+                <span class="alert-info">{{ msg|raw }}</span><br>
+                <form action="modifetud.php" method="post">
+                    <input type="text" hidden value="{{ etud.id }}" name="etuID" >
+                    <label class="moderns">Reference de l'etudiant:</label><input type="text" value="{{ etud.refEtud }}" required name="ref" class="simple-input"/>
+                    {{ etu|raw }}
+                    <label class="moderns">Nom de l'etudiant:</label><input type="text" value="{{ etud.Nom }}" required name="nom" class="simple-input"/><br>
+                    <label class="moderns">Prenom de l'etudiant:</label><input type="text" value="{{ etud.Prenom }}" required name="prenom" class="simple-input"/><br>
+                    <label class="moderns">Date de naissance:</label> <input type="date" value='{{ etud.datenaiss }}' required class="simple-input" name="dateNaiss"/><br>
+                    <label class="moderns">GSM:</label> <input type="tel" value="{{ etud.gsm }}" placeholder="06 xx xx xx xx" class="simple-input" name="gsm"/><br>
+                    <label class="moderns">Etablissement:</label>
+                    <select class="simple-input" required name="etab">
+                        <option value="FSI" {% if etud.Etablissement == "FSI" %} selected="selected" {% endif %}>Facult&eacute; des science de l'ing&eacute;nieur</option>
+                        <option value="ECM" {% if etud.Etablissement == "ECM" %} selected="selected" {% endif %}>Ecole de Commerce et de Management</option>
+                        <option value="ESMAB" {% if etud.Etablissement == "ESMAB" %} selected="selected" {% endif %}>Ecole sup&eacute;rieur des Metiers de L'architecture d'interieur et du b&acirc;timent</option>
+                        <option value="CPE" {% if etud.Etablissement == "CPE" %} selected="selected" {% endif %}>Classe preparatoires aux Grandes Ecoles</option>
+                    </select><br>
+                    <label class="moderns">Filiere:</label> <input type="text" value="{{ etud.Filiere }}" required class="simple-input" name="filiere"/>
+                    <label class="moderns">Ann&eacute;e:</label> <input type="number" value="{{ etud.annee }}" required class="simple-input" name="annee"/><br>
+                    <input type="submit" name="modifier" value="modifier" class="simple-input"/>&emsp;<input type="reset" value="reset" class="simple-input"/>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

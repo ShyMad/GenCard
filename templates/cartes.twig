@@ -1,0 +1,41 @@
+{% extends "main.twig" %}
+{% block title %}Gestion de Cartes{% endblock %}
+
+{% block css %}  <link rel="stylesheet" type="text/css" href="Css/cartes.css" /> {% endblock %}
+
+{% block content %}
+    <div class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <ul class="thumbnails">
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail img-circle">
+                                <a href="cartelist.html"><img height="256px" width="256px" src="Css/images/list_card.png" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>Liste des cartes :</h4>
+                                <p>Voir la liste des cartes  ...</p>
+                                <a class="btn btn-mini" href="cartelist.html">&Rrightarrow; voir plus</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail">
+                                <a href="addcarte.html"><img height="256px" width="256px" src="Css/images/add_card.png" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>Ajouter</h4>
+                                <p>Ajouter une nouvelle carte.</p>
+                                <a class="btn btn-mini" href="addcarte.html">&Rrightarrow; ajouter</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "main.twig" %}
+{% block title %}Liste des mes Actions{% endblock %}
+
+{% block css %}
+    <script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Css/personnels.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <link rel="stylesheet" type="text/css" href="Css/etudList.css" />
+    <link rel="stylesheet" type="text/css" href="Css/tri.css" />
+    <script language="JavaScript" type="text/javascript" src="js/tri.js"></script>
+    <!-- <script language="JavaScript" type="text/javascript" src="js/search.js"></script>-->
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-11 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Mes dernieres actions :</h2>
+                <span class="alert-info">{{ msg|raw }}</span><br>
+                <div class="search">
+                    <i class="fa fa-search"> </i> <input type="text" placeholder="Tapper la Date" class="text line" name="recherche" id="recherche">
+                </div>
+                <div class="scroll">
+                    <table class="paginated">
+                        <thead>
+                        <th>Membre</th>
+                        <th>Date</th>
+                        <th>Operation</th>
+                        <th>Detail</th>
+                        </thead>
+                        <tbody id="affichs">
+
+                        {{ frm|raw }}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

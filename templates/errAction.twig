@@ -1,0 +1,22 @@
+{% extends "main.twig" %}
+{% block title %}Page Not Found{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="Css/err404.css" />
+{% endblock %}
+{% block content %}
+    <!--<center><h2 class="alert-danger">ERROR 403</h2>
+        <p class="alert-danger">Vous n'&ecirc;tes pas autoris&eacute; &aacute; effectuer cette action. Causes possibles, droits insufisants...</p></center>
+    -->
+    <div class="inner-block">
+        <div class="error-404">
+            <div class="error-page-left">
+                <img src="Css/images/404.png" alt="">
+            </div>
+            <div class="error-right">
+                <h2>Oops! Page Not Open</h2>
+                <h4>On ne trouve rien ici !!</h4>
+                <a href="accueil.html">Go Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

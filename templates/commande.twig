@@ -1,0 +1,47 @@
+{% extends "main.twig" %}
+{% block title %}Passer une commande{% endblock %}
+
+{% block css %}
+
+    <script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Css/cartes.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <script language="JavaScript" type="text/javascript" src="js/lirecode.js"></script>
+
+{% endblock %}
+
+{% block content %}
+    <div class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <ul class="thumbnails">
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail img-circle">
+                                 <img height="256px" width="256px" src="Css/images/list_card.png" alt="">
+                            </div>
+                            <div class="caption">
+                                <span class="fa-border center-block text-center bg-danger">{{ msg|raw }}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail">
+                                <label class="moderns">Entrer le code :</label>
+                                    <input type="text" class="simple-input" id="ref" placeholder="ex : C01">
+                                <button id="recherche" class="simple-input">chercher</button>
+                            </div>
+                            <div class="caption" id="affichs">
+                                </form>
+                                <span class="fa-border center-block text-center">Zone Carte Informations!</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

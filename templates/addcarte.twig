@@ -1,0 +1,42 @@
+{% extends "main.twig" %}
+{% block title %}Ajout d'une Carte{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/cartes.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+<?php echo("hello"); ?>
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="form">
+                    <h2 class="">Ajouter une Carte:</h2>
+                    <span class="alert-info">{{ msg|raw }}</span><br>
+                    <form action="addcarte.php" method="post">
+                        <label class="moderns">Reference de la carte:</label><input type="text" required name="refCarte" class="in_put"/><br>
+                        <label class="moderns">Reference de l'etudiant:</label>
+                            <select required name="refEtd" class="in_put">
+                                {{ opt|raw }}
+                            </select><br>
+                        <label class="moderns">Solde de la carte:</label><input type="number" required name="solde" class="in_put"/><br>
+                        <label class="moderns">Statut de la carte:</label>
+                        <select name="statut" class="in_put">
+                            <option value="0">D&eacute;sactiv&eacute;e</option>
+                            <option value="1">Activ&eacute;e</option>
+                        </select><br><br>
+                        <input type="submit" name="ajouter" value="ajouter" class="depth-sub"/>&emsp;<input type="reset" value="reset" class="depth-sub"/>
+                    </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

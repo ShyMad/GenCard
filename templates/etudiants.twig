@@ -1,0 +1,41 @@
+{% extends "main.twig" %}
+{% block title %}Gestion des Etudiants{% endblock %}
+
+{% block css %}  <link rel="stylesheet" type="text/css" href="Css/etudiants.css" /> {% endblock %}
+
+{% block content %}
+    <div class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <ul class="thumbnails">
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail img-circle">
+                                <a href="etdtlist.html"><img height="256px" width="256px" src="Css/images/student_list.png" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>Liste des Etudiants :</h4>
+                                <p>Voir la liste des etudiants  ...</p>
+                                <a class="btn btn-mini" href="etdtlist.html">&Rrightarrow; voir plus</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail">
+                                <a href="addetud.html"><img height="256px" width="256px" src="Css/images/add-student.png" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>Ajouter</h4>
+                                <p>Ajouter un nouveau etduiant.</p>
+                                <a class="btn btn-mini" href="addetud.html">&Rrightarrow; ajouter</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

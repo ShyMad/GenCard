@@ -1,0 +1,39 @@
+{% extends "main.twig" %}
+{% block title %}Modification d'un Personnel{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/personnels.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form">
+            <h2 class="">Modifier un membre :</h2>
+            <span class="alert-info">{{ msg|raw }}</span><br>
+            <form action="modifpersonnel.php" method="post">
+                <input type="text" hidden value="{{ pers.refPersonnel }}" name="refP">
+                <label class="moderns">User Name:</label><input type="text" value="{{ pers.userName }}" name="username" class="simple-input"/><br>
+                <label class="moderns">Password:</label><input type="text" value="{{ pers.Password }}" name="password" class="simple-input"/><br>
+                <label class="moderns">Role:</label>
+                <select class="simple-input" name="role">
+                    <option value="2"{% if pers.role == 2 %} selected="selected"{% endif %}>Membre</option>
+                    <option value="3"{% if pers.role == 3 %} selected="selected"{% endif %}>Super Admin</option>
+                </select>
+                <input type="submit" name="modifier" value="modifier" class="depth-sub"/>&emsp;<input type="reset" value="reset" class="depth-sub"/>
+            </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

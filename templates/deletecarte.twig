@@ -1,0 +1,38 @@
+{% extends "main.twig" %}
+{% block title %}Supprimer une Carte{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/cartes.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-11 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Supprimer une Carte:</h2>
+                <span class="alert-info">{{ msg|raw }}</span><br>
+                <form action="deletecarte.php" method="post">
+                    <input type="text" hidden value="{{ carte.id }}" name="carteID" >
+                    <input type="text" hidden value="{{ carte.refCarte }}" name="carteRef" >
+                    <label class="moderns">Reference de la carte:</label><label class="moderns">{{ carte.refCarte }}</label><br>
+                    <label class="moderns">Reference de l'etudiant:</label><label class="moderns">{{ carte.refEtu }}</label><br>
+                    {{ etu|raw }}
+                    <label class="moderns">Solde de la carte:</label><label class="moderns">{{ carte.SoldeCarte }}</label><br>
+
+                    <label class="moderns">Voullez vous supprimer cette Carte ? </label><input type="submit" name="yes" value="yes" class="simple-input"/>&emsp;<input type="submit" name="no" value="no" class="simple-input"/>
+                </form>
+        </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

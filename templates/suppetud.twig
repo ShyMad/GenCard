@@ -1,0 +1,32 @@
+{% extends "main.twig" %}
+{% block title %}Modification d'un Etudiant{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/etudiants.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-8 col-md-offset-2">
+        <div class="form">
+        <h2 class="">Supprimer un Etudiant:</h2>
+        <span class="alert-info">{{ msg|raw }}</span><br>
+        <form action="suppetud.php" method="post">
+            <input type="text" hidden value="{{ etud.id }}" name="etuID" >
+            <input type="text" hidden value="{{ etud.refEtud }}" name="refEtud" >
+            <label class="moderns">Reference de l'etudiant:</label><label class="moderns">{{ etud.refEtud }}</label><br>
+            <label class="moderns">Nom et Prenom </label><label class="moderns">{{ etud.Nom }} {{ etud.Prenom }}</label><br>
+            {{ etu|raw }}
+            <label class="moderns">Voullez vous supprimer cette Etudiant ? </label><input type="submit" name="yes" value="yes" class="simple-input"/>&emsp;<input type="submit" name="no" value="no" class="simple-input"/>
+        </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

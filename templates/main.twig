@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block css %}{% endblock %}
+    <link rel="stylesheet" type="text/css" href="Css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="Css/fonts/font-awesome-4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="Css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="Css/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="Css/menu.css" />
+
+
+
+
+    <title>{% block title %}{% endblock %}</title>
+
+{% endblock %}
+</head>
+<body style="background-color: chocolate">
+<!-- Sticky nav top -->
+<script>
+    $(document).ready(function() {
+        var navoffeset=$(".menu-top").offset().top;
+        $(window).scroll(function(){
+            var scrollpos=$(window).scrollTop();
+            if(scrollpos >=navoffeset){
+                $(".menu-top").addClass("fixed");
+            }else{
+                $(".menu-top").removeClass("fixed");
+            }
+        });
+
+    });
+</script>
+<!-- Sticky nav top -->
+<div class="container">
+    {% if user is defined  %}
+    <div class="menu" style="background-color: chocolate">
+        <nav class="menu-top">
+            <div class="profile"><h3>Gestion des Cartes</h3></div>
+
+            <ul class="icon-list">
+                <!--<a href="#"><i class="fa fa-fw fa-star-o"></i></a>-->
+                <!--
+                               <a href="#" id="noti_Container"><i class="fa fa-fw fa-bell-o"></i></a>
+                                   <div id="noti_Counter"></div>   <!--SHOW NOTIFICATIONS COUNT
+
+
+
+                <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+                <!--<a href="#"><i class="fa fa-fw fa-comment-o"></i></a>-->
+                <a href="logout.html"><i class="fa fa-fw fa-power-off"></i></a>
+            </ul>
+        </nav>
+        {% if  user.role == 3 %}
+        <nav class="menu-side">
+            <a href="accueil.html"> <i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;<span> Bienvenue {{ user.userName }} </span></a>
+            <a href="compte.html">Mon Compte</a>
+            <a href="personnels.html">Gestion de Personnels</a>
+            <a href="etudiants.html">Gestion d'Etudiants</a>
+            <a href="cartes.html">Gestion de Cartes</a>
+            <a href="history.html">Histrique</a>
+            <a href="#" class="last-item"><img src="Css/images/upf.png"></a>
+        </nav>
+        {% else %}
+            <nav class="menu-side">
+                <a> <i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;<span> Bienvenue {{ user.userName }} </span></a>
+                <a href="compte.html">Mon Compte</a>
+                <a href="commande.html">Passer une commande</a>
+                <a href="history.html">Histrique</a>
+                <a href="#" class="last-item"><img src="Css/images/upf.png"></a>
+            </nav>
+        {% endif %}
+    </div>
+    {% else %}
+    <div class="header-title">
+        <h1>Carte Numerique<span>Login Page</span></h1>
+    </div>
+    {% endif %}
+
+
+    <div {% if user is defined %} class="content" {% else %} class="log_content" {% endif %}>
+
+
+
+
+                        {% block content %}
+
+                        {% endblock %}
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

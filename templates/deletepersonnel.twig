@@ -1,0 +1,36 @@
+{% extends "main.twig" %}
+{% block title %}Suppression d'un Personnel{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/personnels.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Supprimer un membre :</h2>
+                <span class="alert-info">{{ msg|raw }}</span><br>
+                <form action="deletepersonnel.php" method="post">
+                    <input type="text" hidden value="{{ pers.refPersonnel }}" name="refP">
+                    <label class="moderns">User Name:</label><label class="moderns">{{ pers.userName }}</label><br>
+                    <label class="moderns">Role:</label><label class="moderns">{% if pers.role == 2 %}Membre{% elseif pers.role == 3 %} Super Admin {% endif %}</label><br>
+
+                        <label class="moderns">Voullez vous supprimer ce membre ? </label><input type="submit" name="yes" value="yes" class="simple-input"/>&emsp;<input type="submit" name="no" value="no" class="simple-input"/>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

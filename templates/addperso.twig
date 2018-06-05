@@ -1,0 +1,37 @@
+{% extends "main.twig" %}
+{% block title %}Ajout de Personnel{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" type="text/css" href="Css/personnels.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-8 col-md-offset-1">
+            <div class="form">
+                <h2 class="">Ajouter un nouveau membre :</h2>
+                <span class="alert-info">{{ app.request.uri }}</span><br>
+                <form action="addperso.php" method="post">
+                    <label class="moderns">User Name:</label><input type="text" name="username" class="line"/><br>
+                    <label class="moderns">Password:</label><input type="text" name="password" class="line"/><br>
+                    <label class="moderns">Role:</label> <select class="line" name="role">
+                        <option value="2">membre</option>
+                        <option value="3">Admin</option>
+                    </select>&nbsp;&nbsp;
+                    <input type="submit" name="ok" value="Ajouter" class="depth-sub">
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

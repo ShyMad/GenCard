@@ -1,0 +1,16 @@
+{% extends "main.twig" %}
+{% block title %} Page de Connexion{% endblock %}
+
+{% block util %}
+    {{ user|raw  }}
+{% endblock %}
+
+{% block content %}
+
+    <h5 class="text-danger text-center"> {{ msg }} </h5>
+
+    {{ form|raw }}
+
+
+
+{% endblock %}

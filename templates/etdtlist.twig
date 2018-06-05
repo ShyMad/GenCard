@@ -1,0 +1,56 @@
+{% extends "main.twig" %}
+{% block title %}Liste des Etudiants{% endblock %}
+
+{% block css %}
+    <script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="Css/etudiants.css" />
+    <link rel="stylesheet" type="text/css" href="Css/froms.css" />
+    <link rel="stylesheet" type="text/css" href="Css/tri.css" />
+    <link rel="stylesheet" type="text/css" href="Css/etudList.css" />
+    <script language="JavaScript" type="text/javascript" src="js/tri.js"></script>
+    <script language="JavaScript" type="text/javascript" src="js/search.js"></script>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="form">
+            <h2 class="">Liste des Etudiants</h2>
+            <span class="alert-info">{{ msg|raw }}</span><br>
+            <div class="search">
+                <i class="fa fa-search"> </i> <input type="text" placeholder="Tapper le nom ou la reference" class="text line me" name="etd" id="recherche"><br>
+
+            </div>
+           <div class="scroll">
+               <i id="error"></i>
+                <table id="sortable" class="paginated">
+                   <thead>
+                        <th>References</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Etablissement</th>
+                        <th>Filiere</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody id="affichs">
+
+                        {{ frm|raw }}
+
+                    </tbody>
+                </table>
+           </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+{% endblock %}

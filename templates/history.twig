@@ -1,0 +1,56 @@
+{% extends "main.twig" %}
+{% block title %}Historiques{% endblock %}
+
+{% block css %}  <link rel="stylesheet" type="text/css" href="Css/history.css" /> {% endblock %}
+
+{% block content %}
+    <div class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <ul class="thumbnails">
+                    {% if  user.role == 3 %}
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail img-circle">
+                                <a href="listhistorique.html"><img height="256px" width="256px" src="Css/images/list_history.png" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>Liste Historiques:</h4>
+                                <p>Voir l'historiques des membres  ...</p>
+                                <a class="btn btn-mini" href="listhistorique.html">&Rrightarrow; voir plus</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-6">
+                        <div class="fff">
+                            <div class="thumbnail">
+                                <a href="monhistorique.html"><img height="256px" width="256px" src="Css/images/history.png" alt=""></a>
+                            </div>
+                            <div class="caption">
+                                <h4>Mon Hisorique</h4>
+                                <p>Voir mon historiques.</p>
+                                <a class="btn btn-mini" href="monhistorique.html">&Rrightarrow; voir</a>
+                            </div>
+                        </div>
+                    </li>
+                        {% else %}
+                            <li class="col-md-6 center-block">
+                                <div class="fff">
+                                    <div class="thumbnail">
+                                        <a href="monhistorique.html"><img height="256px" width="256px" src="Css/images/history.png" alt=""></a>
+                                    </div>
+                                    <div class="caption">
+                                        <h4>Mon Hisorique</h4>
+                                        <p>Voir mon historiques.</p>
+                                        <a class="btn btn-mini" href="monhistorique.html">&Rrightarrow; voir</a>
+                                    </div>
+                                </div>
+                            </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
